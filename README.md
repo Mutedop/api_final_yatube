@@ -4,4 +4,4 @@
 ______________________________
 ### Project **Documentation**: http://localhost:8000/redoc/
 ______________________________
-#### Local Package Installation.
+#### ~~Local~~ Package Installation.
