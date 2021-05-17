@@ -1,4 +1,4 @@
-# YaTube API.
+# **YaTube API.
 ## Django _REST API_ project.
 > version 1 (v.1.0.0)
 ______________________________
