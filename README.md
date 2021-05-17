@@ -4,5 +4,6 @@
 
 ______________________________
 ### Project **Documentation**: http://localhost:8000/redoc/
+### OpenAPI Specification: https://spec.openapis.org/
 ______________________________
 #### ~~Local~~ Package Installation.
