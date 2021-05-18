@@ -5,4 +5,5 @@
 #### Project **Documentation**: http://localhost:8000/redoc/
 * Документация проекта
 _______
-### ~~Local~~ Package Installation.
+### Project installation.
+* Установка проекта
