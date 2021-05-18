@@ -5,7 +5,7 @@
 
 ## Django _REST API_ project.
 #### Project **Documentation**: http://localhost:8000/redoc/
-* Документация проекта
+* `Документация` проекта
 _______
 ### Project installation.
-* Установка `<проекта>`
+* `Установка` проекта
