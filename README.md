@@ -3,4 +3,5 @@
 ## Django _REST API_ project.
 #### * Project **Documentation**: http://localhost:8000/redoc/
 #### * OpenAPI Specification: https://spec.openapis.org/
+_______
 ### ~~Local~~ Package Installation.
