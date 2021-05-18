@@ -1,9 +1,6 @@
 # **YaTube API**
+> version 1.0 (v 1.0)
 ## Django _REST API_ project.
-> version 1 (v 1.0)
-
-______________________________
 #### * Project **Documentation**: http://localhost:8000/redoc/
 #### * OpenAPI Specification: https://spec.openapis.org/
-______________________________
 ### ~~Local~~ Package Installation.
