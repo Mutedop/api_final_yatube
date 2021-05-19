@@ -34,3 +34,9 @@ ______
 ###### При отправке запроса передавайте токен в заголовке `Authorization`:` Bearer <токен>`
 Слово `Bearer` здесь заменяет слово Token и означает, что за ним следует сам токен.
 ______
+
+##### Форма "простого" запроса
+> http://localhost/api/v1/posts/
+> http://localhost/api/v1/group/
+> http://localhost/api/v1/comments/
+> http://localhost/api/v1/follow/
