@@ -23,7 +23,7 @@ ______
 ### Getting a Token
 * Для получения `Token`
 #### POST запрос на `http://localhost/api/v1/token/`
-> потребуется ввести username/password
+###### потребуется ввести username/password
 ______
 
 
