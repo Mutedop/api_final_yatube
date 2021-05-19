@@ -9,12 +9,13 @@
 _______
 ### Project installation.
 * `Установка` проекта
-------|------
-1. Установить виртуальное окружение | `$ python -m venv venv`
-2. Установить зависимости | `(venv) pip install -r requirements.txt`
-3. Создать и применить "миграции" | `(venv) python manage.py makemigrations` -> `(venv) python manage.py migrate`
-4. Заупусить Django сервер | `(venv) python manage.py runserver`
-First Header | Second Header
------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
+
+1. Установить виртуальное окружение 
+* `$ python -m venv venv`
+3. Установить зависимости 
+* `(venv) pip install -r requirements.txt`
+5. Создать и применить "миграции" 
+* `(venv) python manage.py makemigrations` -> `(venv) python manage.py migrate`
+7. Заупусить Django сервер 
+* `(venv) python manage.py runserver`
+
