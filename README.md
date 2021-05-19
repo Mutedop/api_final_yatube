@@ -9,3 +9,6 @@
 _______
 ### Project installation.
 * `Установка` проекта
+1. $ python -m venv venv
+2. (venv) pip install -r requirements.txt
+3. (venv)  python manage.py makemigrations and $ python manage.py migrate
