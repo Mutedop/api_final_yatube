@@ -10,7 +10,9 @@ _______
 ### Project installation.
 * `Установка` проекта
 
-1. Установить виртуальное окружение
+####1. Установить виртуальное окружение
 `$ python -m venv venv`
-2. Установить зависимости
+####2. Установить зависимости
 `(venv) pip install -r requirements.txt`
+####3. Создать и применить "миграции"
+`(venv) python manage.py makemigrations` -> `(venv) python manage.py migrate`
