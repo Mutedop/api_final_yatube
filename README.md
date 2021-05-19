@@ -18,4 +18,9 @@ _______
 `(venv) python manage.py makemigrations` -> `(venv) python manage.py migrate`
 ##### 4. Заупусить Django сервер 
 `(venv) python manage.py runserver`
+______
 
+#### Getting a Token
+* Для получения `Token`
+### POST запрос на `http://localhost/api/v1/token/`
+> потребуется ввести username/password
