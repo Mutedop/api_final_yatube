@@ -24,5 +24,5 @@ ______
 * Для получения `Token`
 #### POST запрос на `http://localhost/api/v1/token/`
 > потребуется ввести username/password
-> Token Life Time: `7 days`
-> Throttle: 'user': `10000/day, anon: 100/day`
+###### Token Life Time: `7 days`
+###### Throttle: 'user': `10000/day, anon: 100/day`
