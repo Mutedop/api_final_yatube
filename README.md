@@ -20,7 +20,9 @@ _______
 `(venv) python manage.py runserver`
 ______
 
-#### Getting a Token
+### Getting a Token
 * Для получения `Token`
-### POST запрос на `http://localhost/api/v1/token/`
+#### POST запрос на `http://localhost/api/v1/token/`
 > потребуется ввести username/password
+> Token Life Time: `7 days`
+> Throttle: 'user': `10000/day, anon: 100/day`
