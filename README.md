@@ -36,7 +36,7 @@ ______
 ______
 
 ##### Форма "простого" запроса
-> http://localhost/api/v1/posts/
-> http://localhost/api/v1/group/
-> http://localhost/api/v1/comments/
-> http://localhost/api/v1/follow/
+> * http://localhost/api/v1/posts/
+* http://localhost/api/v1/group/
+* http://localhost/api/v1/comments/
+* http://localhost/api/v1/follow/
