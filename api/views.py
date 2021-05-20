@@ -13,6 +13,14 @@ from .serializers import (PostSerializer,
                           FollowSerializer)
 
 
+class CreateListViewsSet(mixins.CreateModelMixin, mixins.ListModelMixin,
+                         viewsets.GenericViewSet):
+    """
+    Custom views set for classes with POST and GET methods.
+    """
+    pass
+
+
 class PostViewSet(viewsets.ModelViewSet):
     """
     ModelViewSet written from the documentation,
@@ -21,8 +29,8 @@ class PostViewSet(viewsets.ModelViewSet):
     """
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = (IsOwnerOrReadOnly, IsAuthenticatedOrReadOnly)
-    filter_backends = [DjangoFilterBackend]
+    permission_classes = [IsOwnerOrReadOnly, IsAuthenticatedOrReadOnly]
+    filter_backends = (DjangoFilterBackend, )
     filterset_fields = ['group']
 
     def perform_create(self, serializer):
@@ -39,35 +47,34 @@ class CommentViewSet(viewsets.ModelViewSet):
     we pull on the primary key.
     """
     serializer_class = CommentSerializer
-    permission_classes = (IsOwnerOrReadOnly, IsAuthenticatedOrReadOnly)
+    permission_classes = [IsOwnerOrReadOnly, IsAuthenticatedOrReadOnly]
 
     def perform_create(self, serializer):
-        get_object_or_404(Post, pk=self.kwargs.get('post_pk'))
-        serializer.save(author=self.request.user)
+        post = get_object_or_404(Post, pk=self.kwargs.get('post_pk'))
+        author = self.request.user
+        return serializer.save(author=author, post=post)
 
     def get_queryset(self):
-        post = get_object_or_404(Post, pk=self.kwargs.get('post_pk'))
+        post = get_object_or_404(Post, id=self.kwargs.get('post_pk'))
         return post.comments
 
 
-class GroupViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
-                   viewsets.GenericViewSet):
+class GroupViewSet(CreateListViewsSet):
     """
     ModelViewSet written from the documentation.  Only GET or POST method.
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-    permission_classes = (IsAuthenticatedOrReadOnly, )
+    permission_classes = [IsAuthenticatedOrReadOnly]
 
 
-class FollowViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
-                    viewsets.GenericViewSet):
+class FollowViewSet(CreateListViewsSet):
     """
     ModelViewSet written from the documentation. Only GET or POST method.
     """
     serializer_class = FollowSerializer
-    permission_classes = (IsOwnerOrReadOnly, IsAuthenticated)
-    filter_backends = [SearchFilter]
+    permission_classes = [IsOwnerOrReadOnly, IsAuthenticated]
+    filter_backends = (SearchFilter, )
     search_fields = ['=user__username', '=following__username']
 
     def perform_create(self, serializer):

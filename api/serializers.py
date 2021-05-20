@@ -64,6 +64,10 @@ class FollowSerializer(serializers.ModelSerializer):
     def validate_following(self, following):
         """Field level validation - "following"."""
         if self.context.get('request').method == 'POST':
+            if following is None:
+                raise serializers.ValidationError(
+                    'ERROR: Ошибка при оформлении подписки'
+                )
             if self.context.get('request').user == following:
                 raise serializers.ValidationError(
                     'ERROR: попытка подписаться на самого себя'
@@ -77,6 +81,5 @@ class FollowSerializer(serializers.ModelSerializer):
             UniqueTogetherValidator(
                 queryset=Follow.objects.all(),
                 fields=('user', 'following'),
-                message='Ошибка при оформлении подписки'
             )
         ]
