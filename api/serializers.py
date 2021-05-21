@@ -21,17 +21,16 @@ class CommentSerializer(serializers.ModelSerializer):
     """Serializer class for Comments."""
     author = serializers.SlugRelatedField(
         many=False,
-        read_only=True,
         slug_field='username',
     )
     post = serializers.SlugRelatedField(
-        read_only=True,
         slug_field='id',
     )
 
     class Meta:
         model = Comment
         fields = '__all__'
+        read_only_fields = ('author', 'post', )
 
 
 class GroupSerializer(serializers.ModelSerializer):
